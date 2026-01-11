@@ -3,29 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	var text = "lol"
-	var text1 = "kek"
-	var score int8 = 0
-	fmt.Println(text, text1)
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
-	fmt.Println("Вы пролетели через трубу")
-	score = score + 1
-	fmt.Println("Ваш счет:", score)
+	var lol int8 = 15
+	if lol >= 10 && lol < 15 {
+		fmt.Println("ты красавчик")
+	} else if lol >= 15 {
+		fmt.Println("Ты мега красавчик")
+	} else {
+		fmt.Println("Попробуй еще")
+	}
 }
