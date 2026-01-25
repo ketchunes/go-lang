@@ -2,23 +2,17 @@ package main
 
 import "fmt"
 
-type User struct {
-	Name    string
-	Raiting float64
-	Premium bool
-}
-
 func main() {
-	weather := map[int]int{
-		11: +3,
-		12: +6,
-		13: +9,
-		14: -4,
-		15: +1,
+	criminal := map[string]bool{
+		"Вася":    true,
+		"Игорь":   false,
+		"Валерий": false,
+		"Настя":   true,
+		"Ваня":    true,
 	}
-	for k, v := range weather {
-		fmt.Println(k, v)
+	c, lol := criminal["ы"]
+	if !lol {
+		fmt.Println("Человека нет в базе")
 	}
-	weather[20] = 32
-	fmt.Println(weather[20])
+	fmt.Println(c, lol)
 }
