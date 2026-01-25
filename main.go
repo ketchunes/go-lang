@@ -9,7 +9,7 @@ type User struct {
 }
 
 func main() {
-	userArray := [4]User{
+	userArray := []User{
 		User{
 			Name:    "Данил",
 			Raiting: 5.5,
@@ -31,21 +31,39 @@ func main() {
 			Premium: true,
 		},
 	}
+	fmt.Println("len", len(userArray))
+	fmt.Println("cap", cap(userArray))
+	userArray = append(userArray,
+		User{
+			Name:    "Ваня",
+			Raiting: 2.2,
+			Premium: true,
+		},
+	)
+	fmt.Println("len", len(userArray))
+	fmt.Println("cap", cap(userArray))
+	// fmt.Println("До:")
+	for index, user := range userArray {
+		fmt.Println(index, user)
+	}
+	// // for i := 0; i < len(userArray); i++ {
+	// // 	fmt.Println(userArray[i])
+	// // }
+	// fmt.Println("")
 
-	fmt.Println("До:")
-	for i := 0; i < 4; i++ {
-		fmt.Println(userArray[i])
-	}
-	fmt.Println("")
-
-	for i := 0; i < 4; i++ {
-		if userArray[i].Premium {
-			userArray[i].Raiting += 1.0
-		}
-	}
-	fmt.Println("После:")
-	for i := 0; i < 4; i++ {
-		fmt.Println(userArray[i])
-	}
+	// for index, user := range userArray {
+	// 	if user.Premium {
+	// 		userArray[index].Raiting += 1.0
+	// 	}
+	// }
+	// // for i := 0; i < len(userArray); i++ {
+	// // 	if userArray[i].Premium {
+	// // 		userArray[i].Raiting += 1.0
+	// // 	}
+	// // }
+	// fmt.Println("После:")
+	// for _, user := range userArray {
+	// 	fmt.Println(user)
+	// }
 
 }
