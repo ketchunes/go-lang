@@ -1,18 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	criminal := map[string]bool{
-		"Вася":    true,
-		"Игорь":   false,
-		"Валерий": false,
-		"Настя":   true,
-		"Ваня":    true,
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Введите команду")
+	// ok := scanner.Scan()
+	// if !ok {
+	// 	fmt.Println("Ошибка пользовательского ввода")
+	// 	return
+	// }
+	if ok := scanner.Scan(); !ok {
+		fmt.Println("Ошибка пользовательского ввода")
+		return
 	}
-	c, lol := criminal["ы"]
-	if !lol {
-		fmt.Println("Человека нет в базе")
-	}
-	fmt.Println(c, lol)
+	text := scanner.Text()
+	fields := strings.Fields(text)
+	fmt.Println("text:", text)
+	fmt.Println("Слова:", fields)
 }
