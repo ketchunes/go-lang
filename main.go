@@ -1,26 +1,31 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
+import "fmt"
 
+type Auto interface {
+	StepOnGas()
+}
+
+type BMW struct{}
+
+func (b BMW) StepOnGas() {
+	fmt.Println("вы нажали на газ bmv")
+}
+
+type Zhiga struct{}
+
+func (z Zhiga) StepOnGas() {
+	fmt.Println("я жига из танков лол")
+}
+
+func ride(auto Auto) {
+	fmt.Println("я водитель")
+	fmt.Println("я сажусь в машину")
+	fmt.Println("и нажимаю на газ")
+	auto.StepOnGas()
+}
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Введите команду")
-	// ok := scanner.Scan()
-	// if !ok {
-	// 	fmt.Println("Ошибка пользовательского ввода")
-	// 	return
-	// }
-	if ok := scanner.Scan(); !ok {
-		fmt.Println("Ошибка пользовательского ввода")
-		return
-	}
-	text := scanner.Text()
-	fields := strings.Fields(text)
-	fmt.Println("text:", text)
-	fmt.Println("Слова:", fields)
+	// bmw := BMW{}
+	zhiga := Zhiga{}
+	ride(zhiga)
 }
