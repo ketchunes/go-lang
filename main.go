@@ -4,11 +4,14 @@ import "fmt"
 
 type Auto interface {
 	StepOnGas()
+	StepOnBrake()
 }
 
 type BMW struct{}
 
 type Zhiga struct{}
+
+type Lamba struct{}
 
 func (z Zhiga) StepOnGas() {
 	fmt.Println("Жига")
@@ -16,6 +19,17 @@ func (z Zhiga) StepOnGas() {
 
 func (b BMW) StepOnGas() {
 	fmt.Println("Я бмв")
+}
+
+func (l Lamba) StepOnGas() {
+	fmt.Println("ламба")
+}
+
+func (l Lamba) StepOnBrake() {
+	fmt.Println("Я ламба жму на тормоз")
+}
+func (z Zhiga) StepOnBrake() {
+	fmt.Println("жига жмет на тормоз")
 }
 
 func rideBmw(bmw BMW) {
@@ -37,8 +51,11 @@ func ride(auto Auto) {
 	fmt.Println("Я сажусь в машину")
 	fmt.Println("Я нажмаю на газ")
 	auto.StepOnGas()
+	auto.StepOnBrake()
 }
 func main() {
-	bmw := BMW{}
-	ride(bmw)
+	// lamba := Lamba{}
+	// ride(lamba)
+	zhiga := Zhiga{}
+	ride(zhiga)
 }
